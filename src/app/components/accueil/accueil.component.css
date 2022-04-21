@@ -1,0 +1,17 @@
+
+.container-fluid{
+    padding: 26px;
+}
+.container-fluid p{
+    margin-top: 8px;
+    margin-left: 60px;
+    
+}
+
+.container-fluid .row img{
+    width: 100%;
+}
+
+.vetement{
+    margin-left: 60px;
+}

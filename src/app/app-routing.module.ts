@@ -8,8 +8,8 @@ import { ValidationCommandeComponent } from './components/validation-commande/va
 import { VetementComponent } from './components/vetement/vetement.component';
 
 const routes: Routes = [
-  {path:"", component: AccueilComponent},
-  {path:":id", component: VetementComponent},
+  {path:"accueil", component: AccueilComponent},
+  {path:"accueil/:id", component: VetementComponent},
   {path:"connexion", component:ConnexionComponent},
   {path:"paiment", component:PaiementComponent},
   {path:"panier", component:PanierComponent},
