@@ -3,7 +3,7 @@ html, body {
     min-height: 100vh;
     height: auto;
     overflow-x: hidden;
-    background-color: lightgray !important;
+    background-color: lightgrey;
 }
 
 :root {
