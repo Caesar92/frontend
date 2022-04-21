@@ -8,6 +8,7 @@ import { ConnexionComponent } from './components/connexion/connexion.component';
 import { PanierComponent } from './components/panier/panier.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { ValidationCommandeComponent } from './components/validation-commande/validation-commande.component';
+import { VetementComponent } from './components/vetement/vetement.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ValidationCommandeComponent } from './components/validation-commande/va
     ConnexionComponent,
     PanierComponent,
     PaiementComponent,
-    ValidationCommandeComponent
+    ValidationCommandeComponent,
+    VetementComponent
   ],
   imports: [
     BrowserModule,
