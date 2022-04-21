@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-html body{
-    height: 100%;
-    overflow-x: hidden;
-    background-color: lightgrey
+html, body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+    overflow-y: hidden;
 }
 
 :root {

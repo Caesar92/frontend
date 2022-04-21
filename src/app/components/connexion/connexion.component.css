@@ -1,13 +1,16 @@
-html {
-    height: 100vh;
-}
 .content {
-    margin-top: 10%;
+    height: 100vh;
+    background-image: url("https://cap.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fcap.2F2021.2F01.2F11.2Fa5188c09-2e71-45e9-87e1-f5158c20210a.2Ejpeg/1200x630/background-color/ffffff/quality/70/cr/wqkgQ29saW4gWW91bmctV29sZmYvUmlvdCBHYW1lcyAvIENBUElUQUw%3D/e-sport-jouer-en-ligne-peut-rapporter-des-millions-1393202.jpg");
+    background-size: cover;
+    overflow: hidden !important;
+
 }
 
 .card {
     border: 1px solid var(--ajc-blue);
     border-radius: 20px;
+    background-color: hwb(0 100% 0% / 0.75);
+    box-shadow: 10px 10px 10px black;
 }
 
 form {
