@@ -1,0 +1,43 @@
+html {
+    height: 100vh;
+}
+.content {
+    margin-top: 10%;
+}
+
+.card {
+    border: 1px solid var(--ajc-blue);
+    border-radius: 20px;
+}
+
+form {
+  max-width: 80%;
+  margin-left: 10%;
+  margin-bottom: 5%;
+}
+
+.form-group {
+    margin-top: 1.5rem;
+}
+
+.form-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-button > a {
+    color: red;
+    text-decoration: underline;
+}
+
+.alert {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--ajc-blue);
+    border: 1px solid var(--ajc-blue);
+}

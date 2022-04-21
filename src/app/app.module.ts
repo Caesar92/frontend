@@ -11,6 +11,8 @@ import { ValidationCommandeComponent } from './components/validation-commande/va
 import { VetementComponent } from './components/vetement/vetement.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
