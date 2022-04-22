@@ -1,0 +1,79 @@
+.container-fluid .row img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container{
+    margin-top: 80px;
+}
+
+.container .row img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container .row p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.titre{
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+.container-fluid{
+    margin-left: 215px;
+}
+
+#detailvetement{
+    margin-left: 64px;
+}
+#detailvetement .new{
+    color: var(--ajc-blue);
+    font-weight: 500;
+    margin-top: 53px;
+    margin-bottom: 0px;
+
+}
+
+#detailvetement .detailtitre{
+    font-size: 12px;
+}
+
+#detailvetement .taille p{
+    margin-top: 38px;
+    font-size: 12px;
+}
+
+#detailvetement select{
+    width: 37%;
+    border-radius: 12px;
+}
+
+#detailvetement button{
+    margin-top: 11px;
+    width: 37%;
+    border-radius: 16px;
+    background-color: var(--ajc-blue);
+}
+
+#detailvetement button:hover{
+    margin-top: 11px;
+    width: 37%;
+    border-radius: 16px;
+    background-color: #597193;
+}
+
+#detailvetement .description{
+    width: 45%;
+}
+
+#detailvetement ul{
+        width: 45%;
+    }
+    #detailvetement ul p{
+        margin-top: 11px;    
+    }
+
+    
+    
