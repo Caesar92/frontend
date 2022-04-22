@@ -12,8 +12,11 @@ import { VetementComponent } from './components/vetement/vetement.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DetailVetementComponent } from './components/detail-vetement/detail-vetement.component';
+
+import { authInterceptorProviders  } from './interceptors/auth.interceptor'
 
 @NgModule({
   declarations: [
@@ -32,9 +35,12 @@ import { DetailVetementComponent } from './components/detail-vetement/detail-vet
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    authInterceptorProviders,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
