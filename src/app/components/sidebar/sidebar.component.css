@@ -52,4 +52,10 @@
 #navbar{
     width: 200px;
     position: fixed;
+    height: 100%;
+    background-color: rgb(246, 246, 246)!important;
+    padding: 0px!important;
+    border: solid 1px var(--ajc-blue);
+    border-radius: 14px;
+
 }

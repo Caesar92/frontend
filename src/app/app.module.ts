@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DetailVetementComponent } from './components/detail-vetement/detail-vetement.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ValidationCommandeComponent,
     VetementComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    DetailVetementComponent
   ],
   imports: [
     BrowserModule,
