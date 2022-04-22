@@ -1,0 +1,46 @@
+
+.container-fluid{
+    padding: 26px;
+}
+
+nav{
+    position: fixed;
+}
+
+.container-fluid p{
+    margin-bottom: 0px;
+
+}
+ .vetement p{
+    margin-left: 2px;
+    font-size: 11px;
+}
+
+ .vetement .genre{
+    color: #757575;
+}
+
+.title{
+    margin-left: 26px;
+    font-size: 18px;
+    font-weight: 500;
+}
+ 
+
+.container-fluid .row img{
+    width: 63%;
+    margin-top: 10px;
+}
+
+.vetement{
+    margin-left: 230px;
+}
+
+.vetement .prix{
+    margin-top: 10px;
+}
+
+.vetement .new{
+    color: var(--ajc-blue);
+    font-weight: 500;
+}
