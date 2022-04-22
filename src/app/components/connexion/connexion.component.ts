@@ -13,7 +13,6 @@ export class ConnexionComponent implements OnInit {
 
   form!: FormGroup;
   warningMessage: boolean = false;
-  isLoggedIn = false;
   roles: string[] = [];
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private route :Router, formBuilder: FormBuilder) {
@@ -30,13 +29,10 @@ export class ConnexionComponent implements OnInit {
   }
 
   onSubmit() {
-    this.warningMessage = true;
     this.authService.login(this.email?.value, this.password?.value).subscribe({
       next: data => {
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
-        this.warningMessage = false;
-        this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },

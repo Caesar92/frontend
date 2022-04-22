@@ -6,5 +6,6 @@
     />
     <span>AJC TEAM</span>
       <div class="spacer"></div>
-      <a>Se connecter</a>
+      <a *ngIf="connectedUser == false" [routerLink]="['/connexion']">Se connecter</a>
+      <a *ngIf="connectedUser == true" (click)="logout()">Deconnexion</a>
   </div>
