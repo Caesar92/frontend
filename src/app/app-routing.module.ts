@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"accueil", component: AccueilComponent},
   {path:"accueil/:id", component: VetementComponent},
   {path:"connexion", component:ConnexionComponent},
-  {path:"paiment", component:PaiementComponent},
+  {path:"paiement", component:PaiementComponent},
   {path:"panier", component:PanierComponent},
   {path:"validation", component:ValidationCommandeComponent}
 ];

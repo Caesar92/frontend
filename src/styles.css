@@ -3,9 +3,9 @@ html, body {
     min-height: 100vh;
     height: auto;
     overflow-x: hidden;
-    background-color: lightgrey;
+    background-color: rgb(246, 246, 246)!important;
 }
 
 :root {
-    --ajc-blue :#38b6FF
+    --ajc-blue :#223C60
 }

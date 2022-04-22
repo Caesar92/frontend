@@ -1,1 +1,54 @@
-<p>paiement works!</p>
+<div class="container p-0">
+    <div class="card px-4">
+        <p class="h8 py-3">Paiement de la commande</p>
+        <form class="row gx-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="col-12 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Person Name</p>
+                    <input class="form-control" type="text" placeholder="Name" formControlName="name"
+                        [class.is-invalid]="name?.touched && name?.invalid">
+                </div>
+                <div *ngIf="name?.touched && name?.hasError('required')" class="d-block invalid-feedback mb-1 mt-0">
+                    Please provide a name.
+                </div>
+            </div>
+            <div class="col-12 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Numéro de la carte</p>
+                    <input class="form-control" type="text" placeholder="1234 5678 435678" formControlName="cardNumber"
+                        [class.is-invalid]="cardNumber?.touched && cardNumber?.invalid">
+                    <div *ngIf="cardNumber?.touched && cardNumber?.hasError('required')"
+                        class="d-block invalid-feedback mb-1 mt-0">
+                        Please provide a card number.
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Date d'expiration</p>
+                    <input class="form-control" type="text" placeholder="MM/YYYY" formControlName="experyDate"
+                        [class.is-invalid]="experyDate?.touched && experyDate?.invalid">
+                    <div *ngIf="experyDate?.touched && experyDate?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a date.
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">CVV/CVC</p>
+                    <input class="form-control pt-2 " type="password" placeholder="***" formControlName="cvv"
+                        [class.is-invalid]="cvv?.touched && cvv?.invalid">
+                    <div *ngIf="cvv?.touched && cvv?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="btn btn-primary mb-3"> <span class="ps-3">Pay $243</span> <span
+                        class="fas fa-arrow-right"></span> </div>
+            </div>
+        </form>
+    </div>
+</div>

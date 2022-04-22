@@ -28,6 +28,26 @@ form {
     justify-content: space-around;
 }
 
+.btn-primary {
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, var(--ajc-blue) 0%, #79CBCA 51%, #77A1D3 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto
+}
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none
+}
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in
+}
+
 .form-button > a {
     color: red;
     text-decoration: underline;
