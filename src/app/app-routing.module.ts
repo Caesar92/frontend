@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:"connexion", component:ConnexionComponent},
   {path:"paiment", component:PaiementComponent},
   {path:"panier", component:PanierComponent},
-  {path:"validation", component:ValidationCommandeComponent}
+  {path:"validation", component:ValidationCommandeComponent},
+  {path:"vetement", component:VetementComponent}
 ];
 
 @NgModule({
