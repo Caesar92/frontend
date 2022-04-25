@@ -14,7 +14,9 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        if(((<NavigationEnd>event).url) == "/connexion" || ((<NavigationEnd>event).url) == "/paiement"){
+        if(((<NavigationEnd>event).url) == "/connexion" || 
+        ((<NavigationEnd>event).url) == "/paiement" ||
+        ((<NavigationEnd>event).url) == "/inscription" ) {
           this.href = true
         }else{
           this.href = false
