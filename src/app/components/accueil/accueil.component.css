@@ -43,3 +43,7 @@
 .vetement{
     margin-left: 60px;
 }
+
+img{
+    cursor: pointer;
+}

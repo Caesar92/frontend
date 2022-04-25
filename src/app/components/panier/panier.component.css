@@ -1,0 +1,79 @@
+
+.container{
+    margin-top: 80px;
+}
+
+.container .row img{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container .row p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.titre{
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+.container-fluid{
+   margin-left: 430px;
+}
+
+.container-fluid .row img{
+    width: 25%;
+    margin-top: 41px;
+}
+
+.monPanier{
+    font-size: 23px;
+    font-weight: 400;
+}
+
+#descriptionProduit p {
+    margin-bottom: 2px;
+}
+
+#descriptionProduit .description{
+    color: #757575;
+}
+
+#descriptionProduit .couleur{
+    color: #757575;
+}
+
+#descriptionProduit .taille{
+    color: #757575;
+}
+
+
+.recapitulatif{
+    width: 100%;
+    display: inline-block;
+    margin-top: 20px;
+    vertical-align: top;
+}
+
+.recap{
+    font-weight: 500;
+}
+
+.recapitulatif button{
+    margin-top: 11px;
+    width: 37%;
+    border-radius: 16px;
+    background-color: var(--ajc-blue);
+    margin-left: 57px;
+
+}
+
+.recapitulatif button:hover{
+    width: 37%;
+    border-radius: 16px;
+    background-color: #597193;
+}
+
+.total{
+    font-weight: 500;
+}

@@ -44,3 +44,7 @@ nav{
     color: var(--ajc-blue);
     font-weight: 500;
 }
+
+img{
+    cursor: pointer;
+}

@@ -4,8 +4,10 @@
       alt="Angular Logo"
       src="assets/logo.png"
     />
-    <span>AJC TEAM</span>
+    <a [routerLink]="['/accueil']">AJC TEAM</a>
       <div class="spacer"></div>
+      <a class="panier" [routerLink]="['/panier']"><i class="bi bi-cart3"></i>
+      </a>
       <a *ngIf="connectedUser == false" [routerLink]="['/connexion']">Se connecter</a>
       <a *ngIf="connectedUser == true" (click)="logout()">Deconnexion</a>
   </div>

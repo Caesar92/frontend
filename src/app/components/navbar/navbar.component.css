@@ -31,3 +31,10 @@
   .spacer {
     flex: 1;
   }
+
+  .panier{
+  cursor: pointer;
+}
+  .panier a:hover {
+    opacity: 0.8;
+  }
