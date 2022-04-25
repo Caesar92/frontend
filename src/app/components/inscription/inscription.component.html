@@ -1,0 +1,118 @@
+<div class="container p-0">
+    <div class="card px-4">
+        <p class="h8 py-3">Inscription</p>
+        <form class="row gx-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <div class="col-4 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Prénom</p>
+                    <input class="form-control" type="text" placeholder="Prénom" formControlName="prenom"
+                        [class.is-invalid]="prenom?.touched && prenom?.invalid">
+                    <div *ngIf="prenom?.touched && prenom?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a date.
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Nom</p>
+                    <input class="form-control pt-2 " type="text" placeholder="Nom" formControlName="nom"
+                        [class.is-invalid]="nom?.touched && nom?.invalid">
+                    <div *ngIf="nom?.touched && nom?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Date de naissance</p>
+                    <input class="form-control pt-2 " type="date" placeholder="Nom" formControlName="dateDeNaissance"
+                        [class.is-invalid]="dateDeNaissance?.touched && dateDeNaissance?.invalid">
+                    <div *ngIf="dateDeNaissance?.touched && dateDeNaissance?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Addresse</p>
+                    <input class="form-control" type="text" placeholder="Adresse" formControlName="adresse"
+                        [class.is-invalid]="adresse?.touched && adresse?.invalid">
+                    <div *ngIf="adresse?.touched && adresse?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a date.
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Code postal</p>
+                    <input class="form-control pt-2 " type="text" placeholder="Code Postal" formControlName="codePostal"
+                        [class.is-invalid]="codePostal?.touched && codePostal?.invalid">
+                    <div *ngIf="codePostal?.touched && codePostal?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Ville</p>
+                    <input class="form-control" type="text" placeholder="Ville" formControlName="ville"
+                        [class.is-invalid]="ville?.touched && ville?.invalid">
+                    <div *ngIf="ville?.touched && ville?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a date.
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Pays</p>
+                    <input class="form-control pt-2 " type="text" placeholder="Pays" formControlName="codePostal"
+                        [class.is-invalid]="pays?.touched && pays?.invalid">
+                    <div *ngIf="pays?.touched && pays?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Email</p>
+                    <input class="form-control pt-2 " type="text" placeholder="Email" formControlName="email"
+                        [class.is-invalid]="email?.touched && email?.invalid">
+                    <div *ngIf="email?.touched && email?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-2">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Password</p>
+                    <input class="form-control pt-2 " type="text" placeholder="Password" formControlName="password"
+                        [class.is-invalid]="password?.touched && password?.invalid">
+                    <div *ngIf="password?.touched && password?.hasError('required')"
+                        class="d-block invalid-feedback  mb-1 mt-0">
+                        Please provide a cvv.
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="col-12" >
+                <button class="btn btn-primary mb-3" type="submit" style="text-align: center !important;"> 
+                    S'incrire <span class="fas fa-arrow-right"></span> 
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

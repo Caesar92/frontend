@@ -16,7 +16,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DetailVetementComponent } from './components/detail-vetement/detail-vetement.component';
 
-import { authInterceptorProviders  } from './interceptors/auth.interceptor'
+import { authInterceptorProviders  } from './interceptors/auth.interceptor';
+import { InscriptionComponent } from './components/inscription/inscription.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { authInterceptorProviders  } from './interceptors/auth.interceptor'
     VetementComponent,
     NavbarComponent,
     SidebarComponent,
-    DetailVetementComponent
+    DetailVetementComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
