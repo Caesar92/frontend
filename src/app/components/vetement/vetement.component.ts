@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vetement } from 'src/app/interfaces/vetement';
+import { VetementsService } from 'src/app/services/vetements.service';
 
 @Component({
   selector: 'app-vetement',
@@ -11,6 +13,18 @@ export class VetementComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.vetementService.getVetements()
+    .subscribe({
+      next: vetements => {
+        this.vetements = vetements;
+      },
+      error : err => {
+        console.log(err)
+      },
+      complete:() => {
+        console.log('completed');
+      }
+    })
   }
 
   receptionMessage(msgName :any) {

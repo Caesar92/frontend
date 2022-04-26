@@ -1,16 +1,16 @@
 <div class="container-fluid">
         <div class="row">
             <div class="col-3"> 
-                <img src="assets/pull.jpg"/>
+                <img [src]="vetement.photo" [alt]="vetement.intitule"/>
             </div>
             <div class="col-3"> 
-                <img src="assets/pull.jpg"/>
+                <img [src]="vetement.photo" [alt]="vetement.intitule"/>
             </div>
             <div id="detailvetement" class="col">
                 <p class="new"> Dernières sorties </p>
-                <p class="titre"> Sweat à capuche AJC Corp</p>
-                <p class="detailtitre"> Sweat à capuche de AJC Corp pour Homme </p>
-                <p class="prix"> 200€ </p>
+                <p class="titre"> {{vetement.intitule}} {{vetement?.marque}} </p>
+                <p class="detailtitre"> {{vetement.intitule}} de {{vetement.marque}} pour {{vetement.sexe}}</p>
+                <p class="prix"> {{vetement.price}} </p>
                 <div class="taille">
                     <p> Sélectionner la taille </p>
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -47,7 +47,7 @@
     <div class="row">
         <p> Nous vous recommandons
         </p>
-        <div class="col">
+        <div class="col" >
             <img src="assets/pull.jpg"/>
         </div>
         <div class="col">
