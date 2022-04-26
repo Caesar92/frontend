@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vetement } from 'src/app/interfaces/vetement';
 import { VetementsService } from 'src/app/services/vetements.service';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-vetement',
@@ -9,22 +10,28 @@ import { VetementsService } from 'src/app/services/vetements.service';
 })
 export class VetementComponent implements OnInit {
 vetements : Vetement[] = []
+genre!: string
   formValueFromSidebar: any;
-  constructor(private vetementService : VetementsService) { }
+  constructor(private vetementService : VetementsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.vetementService.getVetements()
-    .subscribe({
-      next: vetements => {
-        this.vetements = vetements;
-      },
-      error : err => {
-        console.log(err)
-      },
-      complete:() => {
-        console.log('completed');
+    this.route.queryParams.subscribe(
+      params  => {
+        this.genre = params['sexe'];
+        this.vetementService.getVetementFilter(this.genre,0,100000,['S','M','L','XL'])
+        .subscribe({
+          next: vetements => {
+            this.vetements = vetements;
+          },
+          error : err => {
+            console.log(err)
+          },
+          complete:() => {
+            console.log('completed');
+          }
+        })
       }
-    })
+    )
   }
 
   receptionMessage(msgName :any) {

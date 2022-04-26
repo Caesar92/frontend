@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <app-sidebar (unEvenement)="receptionMessage($event)"></app-sidebar>
-    <p class="title"> Hommes ({{vetements.length}}) </p>
+    <p class="title"> {{formValueFromSidebar.sexe}} ({{vetements.length}}) </p>
     <div class="vetement">
     
         <div class="row">
@@ -18,7 +18,7 @@
             </div>
           
           
-          </div>
+        </div>
   
          
 

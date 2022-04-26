@@ -1,71 +1,74 @@
 <div class="container-fluid">
-<div class="row">
-    <div class="col-sm-12 col-lg-3">
-        <p class="monPanier">Mon Panier (1)</p>
-        <div class="row">
-                    <img src="assets/pull.jpg"/>
-                            <div class="col-8" id="descriptionProduit">
-                                <p> Sweat à capuche AJC CORP</p>
-                                <p class="prix"> 200€ </p>
-                                <p class="description"> Sweat à pour homme AJC CORP</p>
-                                <p class="couleur"> Couleur : Noir </p>
-                                <p class="taille"> Taille : M </p>
-                            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 col-lg-4">
-        <aside class="recapitulatif"> 
-            <div class="row">
-                <p class="recap"> Récapitulatif </p>
-                <div class="row">
-                    <div class="col">
-                        <p>Sous-total : </p>
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <p class="monPanier">Mon Panier ({{panierLenght}})</p>
+            <div class="row" style="margin-bottom: 16px; border: 1px solid var(--ajc-blue);" *ngFor="let v of listVetement">
+                <img [src]="v.photo" />
+                <div class="col-8" id="descriptionProduit" style="padding-top: 1%;">
+                    <div style="display: flex;justify-content: space-between;">
+                        <p>{{v.intitule}}</p>
+                        <a style="color: red;" (click)="remove(v.id)">Retirer du panier</a>
                     </div>
-                    <div class="col">
-                        200€
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>Livraison : </p>
-                    </div>
-                    <div class="col">
-                        0€
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="total">Total : </p>
-                    </div>
-                    <div class="col">
-                        <p class="total"> 200€</p>
-                    </div>
-                </div>
-                <div class="row">
-                <button class="btn btn-primary" [routerLink]="['/paiement']"> Paiement </button>
+                    <p class="prix">{{v.prix}}€</p>
+                    <p class="description"> {{v.intitule}}</p>
+                    <p class="couleur"> Couleur : {{v.couleur}} </p>
+                    <p class="taille"> Taille : {{v.taille}} </p>
                 </div>
             </div>
-                
-        </aside>
+        </div>
+        <div class="col-sm-12 col-lg-4">
+            <aside class="recapitulatif">
+                <div class="row">
+                    <p class="recap"> Récapitulatif </p>
+                    <div class="row">
+                        <div class="col">
+                            <p>Sous-total : </p>
+                        </div>
+                        <div class="col">
+                            {{prixVetement}}€
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>Livraison : </p>
+                        </div>
+                        <div class="col">
+                            {{prixLivraison}}€
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="total">Total : </p>
+                        </div>
+                        <div class="col">
+                            <p class="total"> {{prixTotal}}€</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-primary" [routerLink]="['/paiement']"> Paiement </button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
     </div>
-</div>
 </div>
 
 
 <div class="container">
 
-<div class="row">
-    <p> Vous aimerez peut-être aussi
-    </p>
-    <div class="col">
-        <img src="assets/pull.jpg"/>
+    <div class="row">
+        <p> Vous aimerez peut-être aussi
+        </p>
+        <div class="col">
+            <img src="assets/pull.jpg" />
+        </div>
+        <div class="col">
+            <img src="assets/pull.jpg" />
+        </div>
+        <div class="col">
+            <img src="assets/pull.jpg" />
+        </div>
     </div>
-    <div class="col">
-        <img src="assets/pull.jpg"/>
-    </div>
-    <div class="col">
-        <img src="assets/pull.jpg"/>
-    </div>
-</div>
 
 </div>

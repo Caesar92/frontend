@@ -1,4 +1,5 @@
 import { Role } from "./role";
+import { Vetement } from "./vetement";
 
 export interface User {
     id: number,
@@ -11,5 +12,6 @@ export interface User {
     codePostal: string,
     ville: string,
     pays: string,
-    role: Role[]
+    role: Role[],
+    listVetement: Vetement[]
 }
