@@ -8,9 +8,9 @@ import { VetementsService } from 'src/app/services/vetements.service';
   styleUrls: ['./vetement.component.css']
 })
 export class VetementComponent implements OnInit {
-
+vetements : Vetement[] = []
   formValueFromSidebar: any;
-  constructor() { }
+  constructor(private vetementService : VetementsService) { }
 
   ngOnInit(): void {
     this.vetementService.getVetements()
@@ -30,6 +30,18 @@ export class VetementComponent implements OnInit {
   receptionMessage(msgName :any) {
     this.formValueFromSidebar = msgName;
     console.log(this.formValueFromSidebar)
+    this.vetementService.getVetementFilter(this.formValueFromSidebar.sexe,this.formValueFromSidebar.min,this.formValueFromSidebar.max,this.formValueFromSidebar.taille )
+    .subscribe({
+      next: vetements => {
+        this.vetements = vetements;
+      },
+      error : err => {
+        console.log(err)
+      },
+      complete:() => {
+        console.log('completed');
+      }
+    })
   }
 
 }
