@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -9,7 +10,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  genre! : String
   @Output()
   unEvenement = new EventEmitter();
 
@@ -21,10 +22,14 @@ export class SidebarComponent implements OnInit {
   ]
 
   form!: FormGroup
-  constructor(formBuilder: FormBuilder) {
-
+  constructor(formBuilder: FormBuilder, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(
+      params  => {
+        this.genre = params['sexe'];
+      }
+    )
     this.form = formBuilder.group({
-      sexe: new FormControl(''),
+      sexe: new FormControl(this.genre),
       prix: new FormControl(''),
       tailles: new FormArray([])
     })
@@ -44,9 +49,11 @@ export class SidebarComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
     this.form.value.tailles
       .map((checked: boolean, i: number) => checked ? this.TAILLES_LIST[i].id : null)
       .filter((v: any) => v !== null);
+      this.unEvenement.emit(this.parseDataForm())
   }
 
   parseDataForm() {

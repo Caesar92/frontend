@@ -1,92 +1,49 @@
 <div class="container-fluid">
-    <p class="title"> Commencez votre shopping ici </p>
+    <p class="title"> Êtes-vous :  </p>
 <div class="vetement">
 
     <div class="row row-cols-2">
-        <div class="col"> <img [routerLink]="['/vetement']" src="assets/pull.jpg"/></div> 
-        <div class="col"> <img [routerLink]="['/vetement']" src="assets/pull.jpg"/></div>
+        <div class="col"> <img [routerLink]="['/vetement']" [queryParams]="{ sexe: 'Homme'}" class="imgDouble" src="assets/homme.jpg"/></div> 
+        <div class="col"> <img [routerLink]="['/vetement']" [queryParams]="{ sexe: 'Femme'}" class="imgDouble" src="assets/femme.jpg"/></div>
       </div>
 </div>
-<p class="title"> Nos meilleurs sweat </p>
+<p class="title"> Nos meilleurs maillots pour Femme </p>
 <div class="vetement">
 
     <div class="row row-cols-3">
-        <div class="col"> <img src="assets/pull.jpg"/>
+        <div class="col" *ngFor="let vetement of vetementFemme"> <img routerLink="/vetement/{{vetement.id}}" [src]="vetement.photo" />
         <div class="row"> 
-            <p> Sweat à capuche AJC Corp</p>
-            <p class="genre"> Sweat pour homme</p>
+            <p> {{vetement.intitule}}</p>
+            <p class="genre"> {{vetement.marque}}</p>
         </div>
         <div class="row">
-            <p> 120€</p>
+            <p>{{vetement.price}} €</p>
             </div>
         </div>
-        <div class="col"> <img src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-            </div>
-            <div class="row">
-                <p> 120€</p>
-                </div>
-        </div>
+       
       
-        <div class="col"> <img src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-            </div>
-            <div class="row">
-                <p> 120€</p>
-                </div></div>
       
       </div>
 </div>
 
-<p class="title"> Découvrez ces marques </p>
-<div class="vetement">
-
-    <div class="row row-cols-2">
-        <div class="col"> <img src="assets/pull.jpg"/></div>
-        <div class="col"> <img src="assets/pull.jpg"/></div>
-      </div>
-</div>
 
 
-
-<p class="title"> Les indispensables  </p>
+<p class="title  border-top border-1"> Nos meilleurs Ventes Mixte </p>
 <div class="vetement">
 
     <div class="row row-cols-3">
-        <div class="col"> <img src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-            </div>
-            <div class="row">
-                <p> 120€</p>
-                </div>
-            </div>
-      
-        <div class="col"> <img src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-            </div>
-            <div class="row">
-                <p> 120€</p>
-                </div>
-            </div>
-      
-        <div class="col"> <img src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-            </div>
-            <div class="row">
-                <p> 120€</p>
-                </div>
+        <div class="col" *ngFor="let vetement of vetementUnisexe"> <img routerLink="/vetement/{{vetement.id}}" [src]="vetement.photo" />
+        <div class="row"> 
+            <p> {{vetement.intitule}}</p>
+            <p class="genre"> {{vetement.marque}}</p>
         </div>
-     
+        <div class="row">
+            <p>{{vetement.price}} €</p>
+            </div>
+        </div>
+       
+      
+      
       </div>
 </div>
 
