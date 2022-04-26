@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +10,79 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  @Output()
+  unEvenement = new EventEmitter();
+
+  TAILLES_LIST = [
+    {id: 1, label: 'S', checked: false},
+    {id: 2, label: 'M', checked: false},
+    {id: 3, label: 'L', checked: false},
+    {id: 4, label: 'XL', checked: false}
+  ]
+
+  form!: FormGroup
+  constructor(formBuilder: FormBuilder) {
+
+    this.form = formBuilder.group({
+      sexe: new FormControl(''),
+      prix: new FormControl(''),
+      tailles: new FormArray([])
+    })
+
+    this.addCheckboxesToForm()
+
+  }
+
+  private addCheckboxesToForm() {
+    this.TAILLES_LIST.forEach(() => this.taillesFormArray.push(new FormControl(false)));
+  }
+
+  get sexe() { return this.form.get('sexe')}
+  get prix() { return this.form.get('prix'); }
+  get tailles() { return this.form.get('tailles'); }
+  get taillesFormArray() { return this.form.get('tailles') as FormArray }
+
 
   ngOnInit(): void {
+    this.form.value.tailles
+      .map((checked: boolean, i: number) => checked ? this.TAILLES_LIST[i].id : null)
+      .filter((v: any) => v !== null);
+  }
+
+  parseDataForm() {
+    let sexe: string | null; 
+    let min: number | null;
+    let max: number | null;
+    let taille: string[] | null = [];
+
+    if(this.sexe?.value == null || this.sexe?.value == ''){
+      sexe = null
+    }
+    else {
+      sexe = this.sexe.value
+    }
+
+    if(this.prix?.value == null || this.prix?.value == ''){
+      min = null;
+      max = null;
+    }else{
+      min = this.prix?.value.split("-")[0];
+      max = this.prix?.value.split("-")[1];
+    }
+
+    for(let i = 0; i < this.tailles?.value.length; i++){
+      if(this.tailles?.value[i]){
+        taille?.push(this.TAILLES_LIST[i].label)
+      }
+    }
+    if(taille.length == 0){
+      taille = null;
+    }
+    return {sexe:sexe, min:min, max:max, taille: taille}
+  }
+
+  onSubmit(): void {
+    this.unEvenement.emit(this.parseDataForm())
   }
 
 }

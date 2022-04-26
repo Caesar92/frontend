@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VetementComponent implements OnInit {
 
+  formValueFromSidebar: any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  receptionMessage(msgName :any) {
+    this.formValueFromSidebar = msgName;
+    console.log(this.formValueFromSidebar)
   }
 
 }
