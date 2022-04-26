@@ -18,12 +18,11 @@
     margin-bottom: 0px;
 }
 .container-fluid{
-   margin-left: 430px;
+   margin-left: 10%;
 }
 
 .container-fluid .row img{
     width: 25%;
-    margin-top: 41px;
 }
 
 .monPanier{
