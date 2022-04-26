@@ -1,61 +1,56 @@
 <div class="container-fluid">
-        <div class="row">
-            <div class="col-3"> 
-                <img [src]="vetement.photo" [alt]="vetement.intitule"/>
+    <div class="row">
+        <div class="col-3">
+            <img [src]="vetement.photo" [alt]="vetement.intitule" />
+        </div>
+        <div class="col-3">
+            <img [src]="vetement.photo" [alt]="vetement.intitule" />
+        </div>
+        <div id="detailvetement" class="col">
+            <p class="new"> Dernières sorties </p>
+            <p class="titre"> {{vetement.intitule}} {{vetement?.marque}} </p>
+            <p class="detailtitre"> {{vetement.intitule}} de {{vetement.marque}} pour {{vetement.sexe}}</p>
+            <p class="prix"> {{vetement.price}} €</p>
+            <div class="taille">
+                <p> Sélectionner la taille </p>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option (click)="this.taille = ''">Choisir une taille</option>
+                    <option (click)="changeTaille(t.taille)" *ngFor="let t of vetement.stockList">{{t.taille}} ({{t.quantite}} disponible(s))</option>
+                </select>
+                <button [disabled]="this.taille == ''? true : false" class="btn btn-primary" (click)="addToBasket()"> Ajouter au panier </button>
+                <p class="description">
+                    Vous voulez la chaleur et le confort de votre sweat à capuche préféré, mais avec un look un peu plus
+                    stylé ? Notre sweat à capuche Nike Tech Fleece offre l'équilibre parfait entre confort et design.
+                    Le tissu léger retient la chaleur sans vous encombrer et est idéal pour la superposition, que ce
+                    soit pour vous détendre à la maison ou pour vos déplacements lors des matinées fraîches.
+                </p>
             </div>
-            <div class="col-3"> 
-                <img [src]="vetement.photo" [alt]="vetement.intitule"/>
-            </div>
-            <div id="detailvetement" class="col">
-                <p class="new"> Dernières sorties </p>
-                <p class="titre"> {{vetement.intitule}} {{vetement?.marque}} </p>
-                <p class="detailtitre"> {{vetement.intitule}} de {{vetement.marque}} pour {{vetement.sexe}}</p>
-                <p class="prix"> {{vetement.price}} </p>
-                <div class="taille">
-                    <p> Sélectionner la taille </p>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option value="s" selected>S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                      </select>
-                      <button class="btn btn-primary" > Ajouter au panier </button>
-                      <p class="description">
-                        Vous voulez la chaleur et le confort de votre sweat à capuche préféré, mais avec un look un peu plus stylé ? Notre sweat à capuche Nike Tech Fleece offre l'équilibre parfait entre confort et design. 
-                        Le tissu léger retient la chaleur sans vous encombrer et est idéal pour la superposition, que ce soit pour vous détendre à la maison ou pour vos déplacements lors des matinées fraîches.
-                      </p>
-                </div>
-                <ul class="list-unstyled ps-0">
-                    <li class="border-top mb-1">
-                        <p>Avis (0) </p>
-                       
-
-                    </li>
-                </ul>
-               
-            </div>
-
-
-    </div>  
+            <ul class="list-unstyled ps-0">
+                <li class="border-top mb-1">
+                    <p>Avis (0) </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 
 
 
-</div> 
+</div>
 <div class="container">
 
     <div class="row">
         <p> Nous vous recommandons
         </p>
-        <div class="col" >
-            <img src="assets/pull.jpg"/>
+        <div class="col">
+            <img src="assets/pull.jpg" />
         </div>
         <div class="col">
-            <img src="assets/pull.jpg"/>
+            <img src="assets/pull.jpg" />
         </div>
         <div class="col">
-            <img src="assets/pull.jpg"/>
+            <img src="assets/pull.jpg" />
         </div>
-</div>
-    
+    </div>
+
 </div>

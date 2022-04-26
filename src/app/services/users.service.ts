@@ -1,23 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-const API_URL = 'http://localhost:8080/api/'
+import { User } from '../interfaces/user';
+const API_URL = 'http://localhost:8080/api/users'
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
   constructor(private http: HttpClient) { }
-  getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'all', { responseType: 'text' });
+
+  getUser(id: number): Observable<User>{
+    return this.http.get<User>(API_URL + `/${id}`, { responseType: 'json' });
   }
-  getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
-  }
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
-  }
-  getAdminBoard(): Observable<any> {
-    return this.http.get(API_URL + 'admin', { responseType: 'text' });
+
+  addVetementToPanier(userId: number, vetementId: number): Observable<any>{
+    return this.http.post(API_URL + `/panier?userId=${userId}&vetementId=${vetementId}`, { responseType: 'json' });
   }
 }
