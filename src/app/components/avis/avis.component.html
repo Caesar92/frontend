@@ -1,0 +1,133 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <div class="card-title" style = "text-align: center;">
+        <h1> Donnez votre Avis</h1>
+      </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p> Quelle note donneriez-vous à ce produit? </p>
+        <select formControlName="notes" class="form-select form-select-sm" aria-label=".form-select-sm example">
+          <option value="1" selected> 1 - déçu</option>
+          <option value="2"> 2 - il y a mieux</option>
+          <option value="3"> 3 - moyen</option>
+          <option value="4"> 4 - j'aime</option>
+          <option value="5"> 5 - j'adore</option>
+        </select>
+        <label>Titre de l'avis</label>
+        <input formControlName="titreAvis"
+        type="titreAvis">
+        <p>Avis</p>
+        <input formControlName="avis"
+           type="avis">
+
+      <button type="submit" class="btn btn-primary btn-block"><span> Poster <span class="fas fa-arrow-right"></span> </span></button>
+
+    </form>
+
+      <ul class="list-unstyled ps-0">
+        <li class="border-top mb-1">
+          <p>Avis (0) </p>
+
+
+        </li>
+      </ul>
+
+    </div>
+
+
+  </div>
+<!--
+
+
+
+
+</div>
+<div class="container">
+
+  <div class="row">
+    <p> Nous vous recommandons
+    </p>
+    <div class="col" >
+      <img src="assets/pull.jpg"/>
+    </div>
+    <div class="col">
+      <img src="assets/pull.jpg"/>
+    </div>
+    <div class="col">
+      <img src="assets/pull.jpg"/>
+    </div>
+  </div>
+
+</div>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<head>
+<script>
+
+StarOutUrl=		'StarOut.gif';		//image par défaut
+StarOverUrl=		'StarOver.gif';		//image d'une étoile sélectionnée
+StarBaseId=		'Star';			//id de base des étoiles
+NbStar=			10;			//nombre d'étoiles
+
+LgtStarBaseId=StarBaseId.lastIndexOf('');
+
+function NotationSystem() {
+	for (i=1;i<NbStar+1;i++) {
+		var img			=document.getElementById('Star'+i);
+
+		img.onclick		=function() {alert('Vous avez donné la note de '+Name2Nb(this.id)+'.');};
+		//Réaction lors du clic sur une étoile
+		//Evidemment, il faudrait compléter cette fonction pour la rendre vraiment utile.
+		//Par exemple, envoyer la note dans une base de donnée via un XMLHttpRequest.
+
+		img.alt			='Donner la note de '+i;
+		//Texte au survol
+
+		img.src			=StarOutUrl;
+		img.onmouseover	=function() {StarOver(this.id);};
+		img.onmouseout	=function() {StarOut(this.id);};
+	}
+}
+
+function StarOver(Star) {
+	StarNb=Name2Nb(Star);
+	for (i=1;i<(StarNb*1)+1;i++) {
+		document.getElementById('Star'+i).src=StarOverUrl;
+	}
+}
+
+function StarOut(Star) {
+	StarNb=Name2Nb(Star);
+	for (i=1;i<(StarNb*1)+1;i++) {
+		document.getElementById('Star'+i).src=StarOutUrl;
+	}
+}
+
+function Name2Nb(Star) {
+	//Le survol d'une étoile ne nous permet pas de connaître directement son numéro
+	//Cette fonction extrait donc ce numéro à partir de l'Id
+	StarNb=Star.slice(LgtStarBaseId);
+	return(StarNb);
+}
+
+</script>
+</head>
+
+<body onload="NotationSystem();">
+&lt;!&ndash;
+Vous pouvez mettre un nombre quelconque d'étoiles, veillez juste à mettre à jour la variable NbStar.
+Par défaut, les étoiles sont "éteintes" : si un utilisateur a désectivé JS il ne pourra pas voter mais le script ne plantera pas
+&ndash;&gt;
+<img id="Star1" src="StarOut.gif" /><img id="Star2" src="StarOut.gif" />
+<img id="Star3" src="StarOut.gif" /><img id="Star4" src="StarOut.gif" />
+<img id="Star5" src="StarOut.gif" /><img id="Star6" src="StarOut.gif" />
+<img id="Star7" src="StarOut.gif" /><img id="Star8" src="StarOut.gif" />
+<img id="Star9" src="StarOut.gif" /><img id="Star10" src="StarOut.gif" />
+</body>
+
+</html>
+-->

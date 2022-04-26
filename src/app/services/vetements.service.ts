@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Vetement } from '../interfaces/vetement';
+import {Avis} from "../interfaces/avis";
+import {observableToBeFn} from "rxjs/dist/types/internal/testing/TestScheduler";
 const API_URL = 'http://localhost:8080/api/'
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class VetementsService {
   }
 
   getDetailVetement(id :number): Observable<any>{
-    return this.http.get(API_URL + 'vetements/' + id , { responseType: 'json' });   
+    return this.http.get(API_URL + 'vetements/' + id , { responseType: 'json' });
   }
 
   getVetementFilter(sexe : string, min : number, max : number, taille : string[]){
@@ -37,5 +39,9 @@ export class VetementsService {
     return this.http.get<Vetement[]>(API_URL + `vetements?${sexeParam}&${minParam}&${maxParam}&${tailleParam}`, { responseType: 'json' });
   }
 
-  
+  addAvis(id: number, avis: Avis) : Observable <any> {
+    return this.http.put(API_URL + `vetements/avis/${id}`, avis)
+
+}
+
 }

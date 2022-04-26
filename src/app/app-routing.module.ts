@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { AvisComponent } from './components/avis/avis.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
 import { DetailVetementComponent } from './components/detail-vetement/detail-vetement.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:"validation", component:ValidationCommandeComponent},
   {path:"vetement", component:VetementComponent},
   {path:"vetement/:id", component: DetailVetementComponent},
+  {path:"avis/:id", component: AvisComponent}
 ];
 
 @NgModule({

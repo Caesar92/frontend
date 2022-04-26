@@ -17,7 +17,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DetailVetementComponent } from './components/detail-vetement/detail-vetement.component';
 
 import { authInterceptorProviders  } from './interceptors/auth.interceptor';
-import { InscriptionComponent } from './components/inscription/inscription.component'
+import { InscriptionComponent } from './components/inscription/inscription.component';
+import { AvisComponent } from './components/avis/avis.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
     NavbarComponent,
     SidebarComponent,
     DetailVetementComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    AvisComponent
   ],
   imports: [
     BrowserModule,
