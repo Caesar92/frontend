@@ -1,124 +1,26 @@
 <div class="container-fluid">
     <app-sidebar></app-sidebar>
-    <p class="title"> Hommes Sweats à capuche et sweat-shirts (377) </p>
+    <p class="title"> Hommes ({{vetements.length}}) </p>
     <div class="vetement">
     
         <div class="row">
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
+            <div class="col-4" *ngFor="let vetement of vetements"> 
+                <img  routerLink="/vetement/{{vetement.id}}" [src]="vetement.photo" [alt]="vetement.intitule" />
             <div class="row"> 
                 <p class="new"> Dernières sorties </p>
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-                <p class="genre"> 3 couleurs </p>
+                <p> {{vetement.intitule}}</p>
+                <p class="genre"> {{vetement.marque}}</p>
+                <p class="genre"> {{vetement.couleur}} </p>
             </div>
             <div class="row">
-                <p class="prix"> 120€</p>
+                <p class="prix"> {{vetement.price}} €</p>
                 </div>
-            </div>
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    <p class="new"> Dernières sorties </p>
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
             </div>
           
-            <div class="col">
-                 <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
-                </div>
           
           </div>
-          <div class="row">
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-                <p class="genre"> 3 couleurs </p>
-            </div>
-            <div class="row">
-                <p class="prix"> 120€</p>
-                </div>
-            </div>
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
-            </div>
-          
-            <div class="col">
-                 <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    <p class="new"> Dernières sorties </p>
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
-                </div>
-          
-          </div>
-          <div class="row">
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-            <div class="row"> 
-                <p class="new"> Dernières sorties </p>
-                <p> Sweat à capuche AJC Corp</p>
-                <p class="genre"> Sweat pour homme</p>
-                <p class="genre"> 3 couleurs </p>
-            </div>
-            <div class="row">
-                <p class="prix"> 120€</p>
-                </div>
-            </div>
-            <div class="col"> 
-                <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
-            </div>
-          
-            <div class="col">
-                 <img  [routerLink]="['/vetement/3']" src="assets/pull.jpg"/>
-                <div class="row"> 
-                    
-                    <p> Sweat à capuche AJC Corp</p>
-                    <p class="genre"> Sweat pour homme</p>
-                    <p class="genre"> 3 couleurs </p>
-                </div>
-                <div class="row">
-                    <p class="prix"> 120€</p>
-                    </div>
-                </div>
-          
-          </div>
+  
+         
 
           
     </div>  

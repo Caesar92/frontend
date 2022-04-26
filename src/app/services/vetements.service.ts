@@ -12,5 +12,9 @@ export class VetementsService {
     return this.http.get(API_URL + 'vetements', { responseType: 'json' });
   }
 
+  getDetailVetement(id :number): Observable<any>{
+    return this.http.get(API_URL + 'vetements/' + id , { responseType: 'json' });   
+  }
+
   
 }

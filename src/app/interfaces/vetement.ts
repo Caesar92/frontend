@@ -5,9 +5,9 @@ export interface Vetement {
     intitule: string,
     marque: string,
     taille: string, // Taille europe : S - M - L - XL ...
-    prix: number,
+    price: number,
     couleur: string,
-    quandtité: number,
+    quantité: number,
     photo: string[]
     sexe: boolean
     avis: Avis[]
