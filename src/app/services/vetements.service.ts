@@ -39,6 +39,7 @@ export class VetementsService {
   }
 
   addAvis(id: number, avis: Avis) : Observable <any> {
+    console.log(avis)
     return this.http.put(API_URL + `vetements/avis/${id}`, avis)
 
 }

@@ -9,6 +9,6 @@ export interface Vetement {
     couleur: string,
     photo: string[]
     sexe: boolean
-    avis: Avis[]
+    avisList: Avis[]
     stockList: StockList[]
 }

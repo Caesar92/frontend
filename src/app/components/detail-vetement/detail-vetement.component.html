@@ -27,7 +27,11 @@
             </div>
             <ul class="list-unstyled ps-0">
                 <li class="border-top mb-1">
-                    <p>Avis (0) </p>
+                    <p>Avis ({{vetement.avisList.length}}) </p>
+                    <div *ngFor="let a of vetement.avisList">
+                        <div>{{a.nomUser}} - {{a.note}}/5</div>
+                        <div>{{a.commentaire}}</div>
+                    </div>
                 </li>
             </ul>
         </div>
